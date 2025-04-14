@@ -2,20 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Light Mode - HEX values */
+    --background: #f8fafc;
+    --foreground: #020617;
+
+    --primary: #3b82f6;
+    --primary-foreground: #f8fafc;
+
+    --secondary: #f1f5f9;
+    --secondary-foreground: #020617;
+
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+
+    --success: #10b981;
+    --error: #ef4444;
+
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #3b82f6;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode - HEX values */
+    --background: #050a22;
+    --foreground: #f8fafc;
+
+    --primary: #3b82f6;
+    --primary-foreground: #020617;
+
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+
+    --success: #10b981;
+    --error: #b91c1c;
+
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: #3b82f6;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Your component styles remain unchanged */
+  .glassmorphism {
+    @apply bg-gradient-to-br from-[#e0e9ff] to-[#f1f6ff] dark:from-[#0c0e21] dark:to-[#121f3e];
+    @apply backdrop-blur-md bg-opacity-20 dark:bg-opacity-20;
+    @apply border border-white/20 dark:border-slate-700/20;
+    @apply shadow-lg shadow-black/10 dark:shadow-black/20;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 rounded-md border bg-background text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium mb-1 text-foreground;
+  }
+
+  .form-error {
+    @apply text-xs text-destructive mt-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-md transition-colors;
+  }
+}
+
+@layer base {
+  /* Light Mode Scrollbar */
+  :root {
+    --scrollbar-track: #e2eafc;
+    --scrollbar-thumb: #a5bdfa;
+    --scrollbar-thumb-hover: #98b8fd;
+  }
+
+  /* Dark Mode Scrollbar */
+  .dark {
+    --scrollbar-track: #111a31;
+    --scrollbar-thumb: #1e2b4d;
+    --scrollbar-thumb-hover: #2a3a6a;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    @apply w-4 h-4;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gradient-to-b from-[var(--scrollbar-track)] to-[color-mix(in_oklab,var(--scrollbar-track),transparent_30%)] rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[var(--scrollbar-thumb)] rounded-full border-2 border-solid border-transparent;
+    background-clip: content-box;
+    transition: all 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[var(--scrollbar-thumb-hover)] border-[color-mix(in_oklab,var(--scrollbar-thumb),white_10%)];
+  }
+
+  /* Firefox Support */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
 }
