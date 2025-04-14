@@ -51,7 +51,7 @@ A fully responsive and animated multi-step form built with **Next.js (App Router
 ## 📦 Getting Started
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/multi-step-form.git
+git clone https://github.com/nafistarik/PxlHut_Form
 cd multi-step-form
 ```
 
