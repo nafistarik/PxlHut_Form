@@ -12,9 +12,7 @@ A fully responsive and animated multi-step form built with **Next.js (App Router
 - [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) for API simulation
 - [Sonner](https://sonner.emilkowal.ski/) for toast notifications
 
-## 📸 Demo
-> (Optional) Add a video or GIF here  
-[Watch the demo video](#)
+
 
 ## 📝 Features
 ### 🧾 Form Steps
