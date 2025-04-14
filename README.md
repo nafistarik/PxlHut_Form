@@ -1,37 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Multi-Step Form with Validation (Next.js + React Hook Form + Zod)
+A fully responsive and animated multi-step form built with **Next.js (App Router)**, **React Hook Form**, **Zod**, **Redux Toolkit**, and **TailwindCSS**. This project demonstrates best practices in form handling, validation, state management, and user experience with dark/light mode and animations.
 
-## Getting Started
+## 🧰 Tech Stack
+- [Next.js 14 (App Router)](https://nextjs.org/docs/app)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/) for schema-based validation
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [redux-persist](https://github.com/rt2zz/redux-persist)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) for API simulation
+- [Sonner](https://sonner.emilkowal.ski/) for toast notifications
 
-First, run the development server:
+## 📸 Demo
+> (Optional) Add a video or GIF here  
+[Watch the demo video](#)
 
+## 📝 Features
+### 🧾 Form Steps
+1. **Personal Information**
+   - Full Name (required)
+   - Email (valid format, required)
+   - Phone Number (min 10 digits)
+2. **Address Details**
+   - Street Address (required)
+   - City (required)
+   - Zip Code (numbers only, min 5 digits)
+3. **Account Setup**
+   - Username (min 4 characters)
+   - Password (min 6 characters)
+   - Confirm Password (must match password)
+4. **Summary & Submit**
+   - Review all entered data before final submission
+
+### ✅ Validations
+- Built with **Zod** and integrated via **React Hook Form**
+- Validation per step
+- Real-time error feedback under each field
+
+### 🌐 State Management
+- Global state managed with **Redux Toolkit**
+- Data persisted using **redux-persist**
+- Simulated submission via **RTK Query**
+
+### 💡 UI/UX
+- Fully **responsive design**
+- **Dark/Light mode toggle** with theme persistence
+- **Progress indicators** and **step transitions**
+- **Animated step transitions** with Framer Motion
+- **Toast notifications** for success/error feedback
+
+## 📦 Getting Started
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/multi-step-form.git
+cd multi-step-form
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the Development Server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+App should be running at http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Folder Structure
+```
+app/
+ ┣ form/
+ ┃ ┣ steps/
+ ┃ ┣ components/
+ ┃ ┗ context/
+ ┣ store/
+ ┣ styles/
+ ┣ utils/
+ ┗ layout.tsx
+```
+- `steps/` → Each step of the form
+- `store/` → Redux Toolkit configuration
+- `utils/` → Validation schemas, helpers
+- `context/` → Theme/dark mode provider
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# PxlHut_Form
+## 🧪 Bonus Features
+- 🔄 Simulated API delay using RTK Query
+- 🌗 Dark/Light mode with TailwindCSS
+- 💾 Form state persists on refresh
